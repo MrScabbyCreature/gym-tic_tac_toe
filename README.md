@@ -2,7 +2,7 @@
 A gym based environment for Tic_Tac_Toe. Can be used for testing RL algorithms.
 
 ## Requirements
-python >= 3.5
+python >= 3.5  
 python3-gym 
 
 ## Installation
