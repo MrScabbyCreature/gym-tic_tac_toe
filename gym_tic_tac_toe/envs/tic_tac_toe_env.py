@@ -133,7 +133,7 @@ class TicTacToeEnv(Env):
         self.observation_space = CustomSpace(list(self.P.keys()))
 
         # initialize and start play
-        self.reset(start_player)
+        self.reset()
 
     def step(self, a):
         if self.action_space.contains(a):
@@ -143,15 +143,11 @@ class TicTacToeEnv(Env):
         else:
             print("Invalid Move")
 
-    def reset(self, start_player='X'):
-        global PLAYER1, PLAYER2
-        if start_player == 'O':
-            PLAYER1 = 'O'
-            PLAYER2 = 'X'
+    def reset(self):
         self.s = (EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY)
         return self.s
 
-    def render(self, mode='human'):
+    def render(self, mode='human', close=False):
         print("\t {} | {} | {}".format(self.s[0], self.s[1], self.s[2]))
         print("\t-----------")
         print("\t {} | {} | {}".format(self.s[3], self.s[4], self.s[5]))
